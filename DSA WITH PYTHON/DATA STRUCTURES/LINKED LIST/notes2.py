@@ -1,3 +1,4 @@
+"""HERE WE HAVE THE EXPALANATION OF THE METHOD 2"""
 # class Nodes:                #creating this class because when we will be adding
 #     def __init__(self, data, next=None):   #new node in linked list we will need this
 #         self.data = data
@@ -21,9 +22,14 @@
 #     def printlinkedlist(self):
 #         current_node = self.head                    #this is made just to display the link
 #         while current_node:
-#             print(self.head,end = "->")
+#             print(current_node.data,end = "->")
 #             current_node = current_node.next
 #         print('none')
+         #here we are storing the self.head in a variable because self.head is not returning any
+         #printable value as you can see in the other methods/function
+
+
+
 """HERE WE ARE GOING TO SEE THE SECOND METHOD THAT IS USED IN PYTHON
 TO IMPLEMENT LINKED LIST IN PYTHON"""
 class Nodes:
