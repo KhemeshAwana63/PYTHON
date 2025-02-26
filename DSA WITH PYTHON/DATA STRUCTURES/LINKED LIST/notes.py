@@ -15,8 +15,8 @@ node3 = Nodes(8.8)       #node with data equals 8
 node4 = Nodes("khemu")      #node with data equal "khemu"
 
 node1.next_node = node2    #node1 links to node2
-node2.next_node = node3     #node1 links to node2
-node3.next_node = node4
+node2.next_node = node3     #node2 links to node3
+node3.next_node = node4     #node3 links to node4
 
 """to visualize this we are gonna run a loop and see how one node is pointing towards the next node"""
 current_node = node1
