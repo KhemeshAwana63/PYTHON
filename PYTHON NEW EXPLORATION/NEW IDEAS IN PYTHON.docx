@@ -45,11 +45,17 @@ print("the time taken is ",end_time-start_time)
 
 
 
-
+FLAG APPROACH
 found = False
 for val in list2:
     if 2000 in val:
         print(val[0],"has exactly 2000 rupee expenses")
         found = True
-if not found:                                    here i have used the flag method to only print this statement when the 
-    print("no month has excatly 2000 rupee expenses")          loop is over
+if not found:
+    print("no month has excatly 2000 rupee expenses")
+
+
+UNPACKING OF TUPLES IN LOOP(INBUILT PYTHON FUNCTION)
+list2 = [('jan',2300),('feb',2350),('mar',2600),('apr',2130),('may',2190)]
+for month,amount in list2:
+    print(month,"->",amount)
