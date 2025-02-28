@@ -59,3 +59,12 @@ UNPACKING OF TUPLES IN LOOP(INBUILT PYTHON FUNCTION)
 list2 = [('jan',2300),('feb',2350),('mar',2600),('apr',2130),('may',2190)]
 for month,amount in list2:
     print(month,"->",amount)
+
+
+
+
+
+THIS IS HOW WE USE THE CONCEPT OF FORMETTED STRING FOR BETTER IN LINE CODE
+name = "khemesh"
+age = 76
+print(f'hello i am {name} and i am {age} year old')
