@@ -34,6 +34,9 @@ def ROLL_THE_DICE():
 
 """GUESSING THE NUMBER"""
 
+
+
+
 def GUESS_THE_NUMBER():
     target_no = random.randint(1,101)
     while True:
@@ -49,6 +52,8 @@ def GUESS_THE_NUMBER():
             break
 
 #this is how you make logic for a guess the number type of game
+
+
 
 """ROCK ,PAPER ,SCISSOR"""
 def ROCK_PAPER_SCISSOR():
@@ -97,50 +102,55 @@ def ROCK_PAPER_SCISSOR():
 """i am not happy with this to be honest because i think i could have made better
 logic for this problem but anyways let it be i will be learning more along the path"""
 
+
+
+
 """HERE WE ARE BUILDING A CURRENCY CONVERTER CODE THAT WILL TAKE THREE CURRENCY AS
 OUTPUT AND WILL RETURN THREE CURRENCY OUTPUT ACCORDINGLY"""
-while True:
-    amount = int(input("put in the amount you want to convert "))
+
+def CURRENCY_CONVERTER():
     while True:
-        source_currency = str(input("choose the currency type between USD/RUP/EUR")).lower()
-        target_currency = str(input("choose the currency type between USD/RUP/EUR in which you \
-                                    want to change in ")).lower()
-        if target_currency == source_currency:
-            print(f'{amount}{source_currency}is {amount}{target_currency}')
+        amount = int(input("put in the amount you want to convert "))
+        while True:
+            source_currency = str(input("choose the currency type between USD/RUP/EUR")).lower()
+            target_currency = str(input("choose the currency type between USD/RUP/EUR in which\
+                                        you want to change in " )).lower()
+            if target_currency == source_currency:
+                print(f'{amount}{source_currency}is {amount}{target_currency}')
+                break
+            elif source_currency == "usd" and target_currency == "rup":
+                print (f'{amount} {source_currency} is {amount*88} {target_currency}')
+                break
+            elif source_currency == "usd" and target_currency == "eur":
+                print (f'{amount} {source_currency} is {amount*0.9629} {target_currency}')
+                break
+            elif source_currency == "rup" and target_currency == "usd":
+                print (f'{amount} {source_currency} is {amount/88} {target_currency}')
+                break
+            elif source_currency == "rup" and target_currency == "eur":
+                print (f'{amount} {source_currency} is {amount/90} {target_currency}')
+                break
+            elif source_currency == "eur" and target_currency == "rup":
+                print (f'{amount} {source_currency} is {amount*90} {target_currency}')
+                break
+            elif source_currency == "eur" and target_currency == "usd":
+                print (f'{amount} {source_currency} is {amount*1.2} {target_currency}')
+                break
+            else:
+                print("choose the right current")
+        asking_again = str(input("do you want to use the converter again  y/n" )).lower()
+        while True:
+            if asking_again == "y":
+                print("okay")
+                break
+            elif asking_again == "n":
+                break
+            else:
+                print('choose the valid option')
+                continue
+        if asking_again == "n":
+            print("thanks for playing")
             break
-        elif source_currency == "usd" and target_currency == "rup":
-            print (f'{amount} {source_currency} is {amount*88} {target_currency}')
-            break
-        elif source_currency == "usd" and target_currency == "eur":
-            print (f'{amount} {source_currency} is {amount*0.9629} {target_currency}')
-            break
-        elif source_currency == "rup" and target_currency == "usd":
-            print (f'{amount} {source_currency} is {amount/88} {target_currency}')
-            break
-        elif source_currency == "rup" and target_currency == "eur":
-            print (f'{amount} {source_currency} is {amount/90} {target_currency}')
-            break
-        elif source_currency == "eur" and target_currency == "rup":
-            print (f'{amount} {source_currency} is {amount*90} {target_currency}')
-            break
-        elif source_currency == "eur" and target_currency == "usd":
-            print (f'{amount} {source_currency} is {amount*1.2} {target_currency}')
-            break
-        else:
-            print("choose the right current")
-    asking_again = str(input("do you want to use the converter again  y/n")).lower()
-    while True:
-        if asking_again == "y":
-            print("okay")
-            break
-        elif asking_again == "n":
-            break
-        else:
-            print('choose the valid option')
-            continue
-    if asking_again == "n":
-        print("thanks for playing")
-        break
 
 
         
