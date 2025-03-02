@@ -77,31 +77,22 @@ def ROCK_PAPER_SCISSOR():
                 computer_chosen = random.choice(list)
                 if your_chosen == "rock" and computer_chosen == "rock":
                     print("match tied you chose r and computer chose r")
-                    continue
                 elif your_chosen == "rock" and computer_chosen == "scissor":
                     print("you won you chose r and computer chose s")
-                    continue
                 elif your_chosen == "rock" and computer_chosen == "paper":
                     print("you loose you chose r and cmputer chose p")
-                    continue
                 elif your_chosen == "paper" and computer_chosen == "rock":
                     print("you won you chose p and computer chose r")
-                    continue
                 elif your_chosen == "paper" and computer_chosen == "scissor":
                     print("you loose you chose p and cmputer chose s")
-                    continue
                 elif your_chosen == "paper" and computer_chosen == "paper":
                     print("match tied you chose p and computer chose p")
-                    continue
                 elif your_chosen == "scissor" and computer_chosen == "paper":
                     print("you won you chose s and computer chose p")
-                    continue
                 elif your_chosen == "scissor"and computer_chosen == "scissor":
                     print("match tied you chose s and computer chose s")
-                    continue
                 elif your_chosen == "scissor" and computer_chosen == "rock":
                     print("you loose you chose s and cmputer chose r")
-                    continue
                 else:
                     print("put in the valid option")
                     continue
