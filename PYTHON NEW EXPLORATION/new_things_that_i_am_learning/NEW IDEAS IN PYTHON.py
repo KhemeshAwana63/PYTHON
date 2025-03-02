@@ -3,6 +3,10 @@
 #timer
 #flag approach
 #unpacking of tuple
+#escape sequence characters and row string
+#match cases
+#doc string
+
 
 """in file reading we have option of reading the whole line or 
 we can read line by line and character by character as well"""
@@ -61,6 +65,64 @@ tup1 = (("jan",1212),("feb",2323),("march",8765))
 for month,amount in tup1:
     print(f'{month} and {amount}')
     #this is cool right
+
+
+"""some common escape sequence characters in python language"""
+#a raw string ignores the escape sequence characters
+#next line  \n
+#tab  \t
+#single slash \\
+#\'  and  \"
+#\r  and \b  one owerwtites the functions and other is used for backspace
+
+
+
+"""MATCH - CASES -> they are better at readability ,faster
+ great for exact
+ matches but have limitation that we can not use the normal 
+ mathematical comparison 
+ """
+def matcher():
+    day = ("monday","tuesday","wednesday","thursday","friday","saturday")
+    match day:
+        case "monday":
+            print("bad day")
+        case "tuesday":
+            print("okay okay")
+        case _:         #works like a else statement
+            print("no data given")
+
+
+"""DOC STRING -> used in a function to define it write it in
+a first line of the function to execute and that too in 
+i ways we write a multi line comment"""
+def doc_string():
+    print(__doc__()) #argument -> function name
+    help()  #argument -> function name
+
+
+"""ENUMERATE FUNCTION -> it fetches the ind and val from a iterable
+and it is a iterator so i does not return any value until or unless
+you are using for loop to print for each iteration or you store the 
+iterations in a list"""
+#enumerate(iterable, start=0)   you can choose the starting point of index
+def enumerate_iterator():
+    my_list = ["apple", 42, "banana", 99, "cherry"]
+    for ind , val in enumerate(my_list):
+        print(f'index : {ind} and value : {val}')
+
+    list_of_tuples = list(my_list)
+    print(list_of_tuples)
+
+
+"""NEXT FUNCTION -> this function gives the the value where the 
+iterator is iterating at the moment 
+next(iterator,default)   default is the value you get when the iterator
+#is exhausted to stop the StopIteration exception"""
+my_list = ["apple", 42, "banana", 99, "cherry"]
+iterator = iter(my_list)
+print(next(iterator))
+print(next(iterator))
 
 
 
