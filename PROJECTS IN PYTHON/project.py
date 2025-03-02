@@ -7,36 +7,46 @@ so that is it from me ....enjoy my journey of python"""
 #ROLL_THE_DICE()
 #GUESS_THE_NUMBER()
 #ROCK_PAPER_SCISSOR()
+#CURRENCY_CONVERTER
 
 """ROLE THE DICE"""
 import random
-def ROLL_THE_DICE():
-    a = str(input("do you want to play the roll the dice game y/n")).lower()
+yes = "y"
+no = "n"
+dice_no = (1,2,3)
+choices = (yes , no)
+def ROLL_THE_DICE(counter = 0):
     while True:
-        if a == "y":
-            print(random.randint(1,7))
-            b = str(input("do you want to play again y/n")).lower()
-            if b == "y":
-                continue
-            elif b == "n":
-                print('thanks for playing')
-                break
-            else:
-                print("put in the valid option, only (y/n) are accepted")
-                continue
-        elif a == "n":
-            print('thanks for playing')
-            break
-        else:
-            print("put in the valid option, only (y/n) are accepted")
+        input1 = input('do you want to play roll the dice y/n ').lower()
+        if input1 not in choices:
+            print("choose the valid option")
             continue
-#the nested if condition is just for fun ...i could do it without it as well
+        if input1 == yes:
+            input2 = int(input("how many dices you want to roll options(1,2,3) "))
+            if input2 not in dice_no:
+                print("choose the valid option")
+                continue
+            elif input2 == 1:
+                print(random.randrange(1,7))
+            elif input2 == 2:
+                d1 = random.randrange(1,7)
+                d2 = random.randrange(1,7)
+                print(f'{d1},{d2}')
+            else:
+                d3 = (random.randrange(1,7))
+                d4 = (random.randrange(1,7))
+                d5 = (random.randrange(1,7))
+                print(f'{d3},{d4},{d5}')
+        else:
+            print("thanks for playing, you rolled the dice ",counter,"times")
+            break
+        counter += 1
+
+
+
+
 
 """GUESSING THE NUMBER"""
-
-
-
-
 def GUESS_THE_NUMBER():
     target_no = random.randint(1,101)
     while True:
@@ -52,6 +62,8 @@ def GUESS_THE_NUMBER():
             break
 
 #this is how you make logic for a guess the number type of game
+
+
 
 
 
@@ -113,8 +125,7 @@ def CURRENCY_CONVERTER():
         amount = int(input("put in the amount you want to convert "))
         while True:
             source_currency = str(input("choose the currency type between USD/RUP/EUR")).lower()
-            target_currency = str(input("choose the currency type between USD/RUP/EUR in which\
-                                        you want to change in " )).lower()
+            target_currency = str(input("choose the currency type between USD/RUP/EUR in which you want to change in " )).lower()
             if target_currency == source_currency:
                 print(f'{amount}{source_currency}is {amount}{target_currency}')
                 break
@@ -137,7 +148,7 @@ def CURRENCY_CONVERTER():
                 print (f'{amount} {source_currency} is {amount*1.2} {target_currency}')
                 break
             else:
-                print("choose the right current")
+                print("choose the right currency")
         asking_again = str(input("do you want to use the converter again  y/n" )).lower()
         while True:
             if asking_again == "y":
@@ -152,6 +163,4 @@ def CURRENCY_CONVERTER():
             print("thanks for playing")
             break
 
-
-        
-    
+CURRENCY_CONVERTER()

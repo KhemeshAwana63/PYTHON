@@ -6,6 +6,8 @@
 #escape sequence characters and row string
 #match cases
 #doc string
+#next function 
+#enumerate
 
 
 """in file reading we have option of reading the whole line or 
@@ -115,14 +117,49 @@ def enumerate_iterator():
     print(list_of_tuples)
 
 
+
+
 """NEXT FUNCTION -> this function gives the the value where the 
 iterator is iterating at the moment 
 next(iterator,default)   default is the value you get when the iterator
 #is exhausted to stop the StopIteration exception"""
-my_list = ["apple", 42, "banana", 99, "cherry"]
-iterator = iter(my_list)
-print(next(iterator))
-print(next(iterator))
+def error_handling():
+    def next_function():
+        my_list = ["apple", 42, "banana", 99, "cherry"]
+        iterator = iter(my_list)   #iter function makes iterable iterator
+        print(next(iterator))
+        print(next(iterator))
+
+    """ERROR HANDLING -> used to handle error so the program 
+    does not stops or crash"""
+    try:
+        num = int(input("Enter a number: "))  # Might raise ValueError
+        
+        if num < 0:
+            raise ValueError("Negative numbers are not allowed!")
+            # Manually raising an error
+        print(10 / num)  # Might raise ZeroDivisionError
+
+    except ValueError as e:
+        print(f"ValueError: {e}")
+          # Handles invalid input or manually raised ValueError
+    except ZeroDivisionError:
+        print("You can't divide by zero!")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+    else:
+        print("No errors occurred!")
+          # Runs only if no exception happens
+    finally:
+        print("Done executing.")
+
+    #else is written before finally
+
+
+
+
+
+
 
 
 
