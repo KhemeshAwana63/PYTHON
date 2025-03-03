@@ -1,13 +1,15 @@
-#file reading
-#strip , split(integer , list) , isdigit(trim , integer)
-#timer
-#flag approach
-#unpacking of tuple
-#escape sequence characters and row string
-#match cases
-#doc string
-#next function 
-#enumerate
+"""15"""    #file reading
+"""34"""    #strip , split() , isdigit()
+"""55"""    #timer
+"""66"""    #flag approach
+"""74"""    #unpacking of tuple
+"""84"""    #escape sequence characters and row string
+"""100"""    #match cases
+"""108"""    #doc string
+"""124"""    #next function 
+"""138"""    #enumerate
+"""165"""    #better method of flag approach -> use else with loops 
+"""178"""    #short hand if else
 
 
 """in file reading we have option of reading the whole line or 
@@ -130,6 +132,9 @@ def error_handling():
         print(next(iterator))
         print(next(iterator))
 
+
+
+
     """ERROR HANDLING -> used to handle error so the program 
     does not stops or crash"""
     try:
@@ -154,6 +159,26 @@ def error_handling():
         print("Done executing.")
 
     #else is written before finally
+
+
+
+"""IF ELSE IS USED WITH LOOPS THEN IT WILL ONLY BE EXECUTED ONLY WHEN THE 
+LOOP IS OVER ADN IF LOOP BREAKS IN BETWEEN THE ITERATION THEN THE ELSE 
+STATEMENT IS NOT GOING TO BE EXECUTED"""
+
+for i in range(0,8):
+    print(i)
+    if i == 6:  #because we are breaking the loop it won't execute
+        break
+else:
+    print("the loop is over")
+
+
+
+"""short hand if else statements"""
+a = 5
+b = 3
+print("harry") if a<b else print("carry") if b > a else print("khemesh")
 
 
 
