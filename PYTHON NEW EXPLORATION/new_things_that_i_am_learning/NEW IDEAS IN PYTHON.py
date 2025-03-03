@@ -10,6 +10,7 @@
 """138"""    #enumerate
 """165"""    #better method of flag approach -> use else with loops 
 """178"""    #short hand if else
+"""185"""    #global and local variable
 
 
 """in file reading we have option of reading the whole line or 
@@ -181,6 +182,16 @@ b = 3
 print("harry") if a<b else print("carry") if b > a else print("khemesh")
 
 
+"""a local variable and global variable both are different even if they 
+are stored with the same name to make sure that you want to use the 
+global variable you can specify it using global keyword"""
+x = 7
+def global_var():
+    global x
+    x = 8
+    print(x)
+global_var()
+print(x)
 
 
 
