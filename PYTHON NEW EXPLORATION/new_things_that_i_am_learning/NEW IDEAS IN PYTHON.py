@@ -18,6 +18,8 @@ PURPOSE"""
 """185"""    #global and local variable
 """***"""    #seek(),tell(),truncate()
 """***"""    #lamda function (anonymos function)
+"""***"""    #map() , filter() , reduce()
+"""***"""    #is vs == 
 
 
 """in file reading we have option of reading the whole line or 
