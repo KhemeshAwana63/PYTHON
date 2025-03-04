@@ -1,3 +1,8 @@
+"""THE FUNCTIONS IN THIS FILE ARE ONLY USED TO STOP IT FROM 
+THROWING ERRORS , THEY DON'T WORK THEY ARE ONLY FOR THE LEARNING 
+PURPOSE"""
+
+
 """15"""    #file reading
 """34"""    #strip , split() , isdigit()
 """55"""    #timer
@@ -11,6 +16,8 @@
 """165"""    #better method of flag approach -> use else with loops 
 """178"""    #short hand if else
 """185"""    #global and local variable
+"""***"""    #seek(),tell(),truncate()
+"""***"""    #lamda function (anonymos function)
 
 
 """in file reading we have option of reading the whole line or 
@@ -29,6 +36,10 @@ def file():
     for line in file:
         for char in line:  #this will read character by character
             pass
+    
+    file.seek(6)  #this puts the cursor on the 6 char/byte in the file
+    file.tell() #this tells where the cursor is
+    file.truncate(7)    #this will truncate the file to 7 char/bytes
 
 
 
@@ -185,13 +196,9 @@ print("harry") if a<b else print("carry") if b > a else print("khemesh")
 """a local variable and global variable both are different even if they 
 are stored with the same name to make sure that you want to use the 
 global variable you can specify it using global keyword"""
-x = 7
-def global_var():
-    global x
-    x = 8
-    print(x)
-global_var()
-print(x)
+
+"""yes guys it is possible you can give function a function as 
+an argument"""
 
 
 
