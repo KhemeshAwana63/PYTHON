@@ -1,26 +1,20 @@
-"""THE FUNCTIONS IN THIS FILE ARE ONLY USED TO STOP IT FROM 
-THROWING ERRORS , THEY DON'T WORK THEY ARE ONLY FOR THE LEARNING 
-PURPOSE"""
-
-
-"""15"""    #file reading
-"""34"""    #strip , split() , isdigit()
-"""55"""    #timer
-"""66"""    #flag approach
-"""74"""    #unpacking of tuple
-"""84"""    #escape sequence characters and row string
-"""100"""    #match cases
-"""108"""    #doc string
-"""124"""    #next function 
-"""138"""    #enumerate
-"""165"""    #better method of flag approach -> use else with loops 
-"""178"""    #short hand if else
-"""185"""    #global and local variable
-"""***"""    #seek(),tell(),truncate()
-"""***"""    #lamda function (anonymos function)
-"""***"""    #map() , filter() , reduce()
-"""***"""    #is vs == 
-
+#file reading
+#strip , split() , isdigit()
+#timer
+#flag approach
+#unpacking of tuple
+#escape sequence characters and row string
+#match cases
+#doc string
+#next function 
+#enumerate
+#better method of flag approach -> use else with loops 
+#short hand if else
+#global and local variable
+#seek(),tell(),truncate()
+#lamda function (anonymos function)
+#map() , filter() , reduce()
+#is vs ==
 
 """in file reading we have option of reading the whole line or 
 we can read line by line and character by character as well"""
@@ -78,6 +72,8 @@ def timer():
 
 
 """flag approach -> DYI"""
+
+
 """unpacking of tuple"""
 tup1 = (("jan",1212),("feb",2323),("march",8765))
 for month,amount in tup1:
