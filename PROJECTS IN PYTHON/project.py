@@ -75,26 +75,14 @@ def ROCK_PAPER_SCISSOR():
         if taking_input == "y":
                 your_chosen= str(input("choose between rock/paper/scissor")).lower()
                 computer_chosen = random.choice(list)
-                if your_chosen == "rock" and computer_chosen == "rock":
-                    print("match tied you chose r and computer chose r")
-                elif your_chosen == "rock" and computer_chosen == "scissor":
-                    print("you won you chose r and computer chose s")
-                elif your_chosen == "rock" and computer_chosen == "paper":
-                    print("you loose you chose r and cmputer chose p")
-                elif your_chosen == "paper" and computer_chosen == "rock":
-                    print("you won you chose p and computer chose r")
-                elif your_chosen == "paper" and computer_chosen == "scissor":
-                    print("you loose you chose p and cmputer chose s")
-                elif your_chosen == "paper" and computer_chosen == "paper":
-                    print("match tied you chose p and computer chose p")
-                elif your_chosen == "scissor" and computer_chosen == "paper":
-                    print("you won you chose s and computer chose p")
-                elif your_chosen == "scissor"and computer_chosen == "scissor":
-                    print("match tied you chose s and computer chose s")
-                elif your_chosen == "scissor" and computer_chosen == "rock":
-                    print("you loose you chose s and cmputer chose r")
+                if your_chosen == computer_chosen:
+                    print(f'match tied computer chose {computer_chosen} and you chose {your_chosen}')
+                elif ((your_chosen == "rock" and computer_chosen == "scissor") or
+                     (your_chosen == "paper" and computer_chosen == "rock") or
+                     (your_chosen == "scissor" and computer_chosen == "paper")):
+                     print(f'you won computer chose {computer_chosen} and you chose {your_chosen}')
                 else:
-                    print("put in the valid option")
+                    print(f'you lost computer chose {computer_chosen} and you chose {your_chosen}')
                     continue
         elif taking_input == "n":
             print('thanks for playing')
@@ -153,3 +141,4 @@ def CURRENCY_CONVERTER():
         if asking_again == "n":
             print("thanks for playing")
             break
+ROCK_PAPER_SCISSOR()
