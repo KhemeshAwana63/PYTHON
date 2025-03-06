@@ -141,4 +141,3 @@ def CURRENCY_CONVERTER():
         if asking_again == "n":
             print("thanks for playing")
             break
-ROCK_PAPER_SCISSOR()
