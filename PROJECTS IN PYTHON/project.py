@@ -220,6 +220,11 @@ def QUIZ_GAME():
     print(f"\nAapka final score: {score} out of {len(questions) * 4}")
 
 
+
+
+
+
+
 def TicTacToe():
     board = [" "]*9
 
