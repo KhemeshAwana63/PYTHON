@@ -96,6 +96,8 @@ logic for this problem but anyways let it be i will be learning more along the p
 
 
 
+
+
 """HERE WE ARE BUILDING A CURRENCY CONVERTER CODE THAT WILL TAKE THREE CURRENCY AS
 OUTPUT AND WILL RETURN THREE CURRENCY OUTPUT ACCORDINGLY"""
 
@@ -141,3 +143,133 @@ def CURRENCY_CONVERTER():
         if asking_again == "n":
             print("thanks for playing")
             break
+
+
+
+
+
+
+def QUIZ_GAME():
+    score = 0  
+    questions = [
+        {
+            'question': 'Doston ke beech hamesha sahi kaun hota hai?',
+            'options': ['Khemesh', 'Karan (lekin sirf sapno mein)', 'Koi nahi hota', 'Option 2 ek joke hai'],
+            'correct': 'Khemesh'
+        },
+        {
+            'question': 'Kaun sabse zyada plans cancel karta hai?',
+            'options': ['Khemesh', 'Karan', 'Dono ek doosre pe ilzaam lagayenge', 'Plan? Kaunsa plan?'],
+            'correct': 'Karan'
+        },
+        {
+            'question': 'Zombie attack mein kaun survive karega?',
+            'options': ['Khemesh', 'Karan', 'Khemesh kyunki usko dimaag use karna aata hai', 'Dono chhup jaayenge aur bhookha zombie ro dega'],
+            'correct': 'Khemesh'
+        },
+        {
+            'question': 'Kaun traffic mein sabse zyada chill rehta hai?',
+            'options': ['Khemesh', 'Karan', 'Gaadi', 'Traffic bhi bhaag jayega Bhais ka patience dekh ke'],
+            'correct': 'Khemesh'
+        },
+        {
+            'question': 'Kaun jaldi tayyar ho jata hai?',
+            'options': ['Khemesh', 'Karan', 'Khemesh, even slow motion mein bhi', 'Karan tayyar hota nahi, tayyar hone ka natak karta hai'],
+            'correct': 'Khemesh'
+        },
+        {
+            'question': 'Dosti ka asli boss kaun hai?',
+            'options': ['Khemesh', 'Karan', 'Khemesh (Karan sirf maan nahi raha)', 'Karan ko lagta hai wo boss hai'],
+            'correct': 'Khemesh'
+        },
+        {
+            'question': 'Kaun hamesha "5 minute" bolke 1 ghanta lagata hai?',
+            'options': ['Khemesh', 'Karan', 'Karan, kyunki uska "5 min" ka alag calendar hai', 'Samay khud confuse ho jata hai'],
+            'correct': 'Karan'
+        },
+        {
+            'question': 'Movie choose karne mein kaun best hai?',
+            'options': ['Khemesh', 'Karan', 'Khemesh, par Karan phir bhi badal dega', 'Remote control bhi thak gaya hai Karan ke choices se'],
+            'correct': 'Khemesh'
+        },
+        {
+            'question': 'Cooking competition kaun jeetega?',
+            'options': ['Khemesh', 'Karan', 'Delivery wala', 'Smoke detector (Karan ka khaana dekh ke)'],
+            'correct': 'Khemesh'
+        },
+        {
+            'question': 'Kaun sabse zyada funny hai?',
+            'options': ['Khemesh', 'Karan', 'Khemesh ke jokes legendary hain', 'Karan ka sense of humor bhi ghaas charne gaya hai'],
+            'correct': 'Khemesh'
+        }
+    ]
+
+    for q in questions:
+        print("\n" + q["question"])
+        for option in q["options"]:
+            print(option)
+        answer = input("Enter your answer here: ").strip().capitalize()  
+
+        if answer == q["correct"]:
+            print("Sahi jawaab! 🔥")
+            score += 4
+        else:
+            print(f"Galat! Sahi jawaab tha: {q['correct']} 😜")
+            score -= 2
+
+    print(f"\nAapka final score: {score} out of {len(questions) * 4}")
+
+
+def TicTacToe():
+    board = [" "]*9
+
+
+    #this fills up the value according to what is their in the index of board list
+    def print_board(board):
+        print(f'{board[0]} | {board[1]} | {board[2]}')
+        print("----------")
+        print(f'{board[3]} | {board[4]} | {board[5]}')
+        print("----------")
+        print(f'{board[6]} | {board[7]} | {board[8]}')
+
+    #now we are going to deal with win cases
+    def determining_winner(board):
+        win_cases = [(0,1,2),(3,4,5),(6,7,8),  #row cases
+                    (0,3,6),(1,4,7),(2,5,8),
+                    (2,4,6),(0,4,8)]  #column cases
+        for a , b , c in win_cases:
+            if board[a] == board[b] == board[c] and board[a] != " ":
+                return board[a]   #will  return X or O depending upon what is their
+        return None
+
+
+    #now we are going to see the main function that will deal with all these functions and run the game
+    turn = 0
+    while True:
+        print_board(board)
+        player = 'X' if turn%2 == 0 else 'O'
+        try:
+            move = int(input(f'player {player} choose a position between (1 to 9)')) - 1
+            if board[move] != " " or move not in range(9):
+                print("invalid number")
+                continue
+            board[move] = player
+            winner = determining_winner(board)  #can return none , X ,O
+
+            if winner:   #this is going to be checked if does not return none
+                print_board(board)
+                print(f'player {winner} has won')
+                break
+            if " " not in board:    #if the match is drawn
+                print("match drawn")
+                break
+            turn += 1
+        
+        except:
+            print("invalid input plz try again")
+
+
+
+
+
+
