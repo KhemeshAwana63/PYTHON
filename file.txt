@@ -1,0 +1,1 @@
+this is a sample file to see how the write mode works
