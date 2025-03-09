@@ -51,26 +51,29 @@ def LoadTask():
 
 def DeleteTask(deleting_section,deleted_task_index):
     try:
-        tasks[deleting_section].pop(deleted_task_index)
+        deleted_task = tasks[deleting_section].pop(deleted_task_index)
         SaveTask()
+        print(f'task {deleted_task} deleted from {deleting_section}')
     except (IndexError , KeyError):
         print("no tasks yet in this section")
 
 
 
-def ViewTask():
-            print("viewing your tasks")
-            for section , tasks_list in tasks.items():
-                print(f'\n{section.capitalize()}')
-                if tasks_list:
-                    for idx , task_detail in enumerate(tasks_list):
-                        print(f'{idx} : {task_detail}')
-                else:
-                    print("no tasks yet")
+def ViewTasks():
+    print("\n📝 Viewing your tasks...")
+    
+    for section, tasks_list in tasks.items():
+        print(f'\n📂 {section.capitalize()}')
+        if tasks_list:
+            for idx, task_detail in enumerate(tasks_list):
+                print(f'{idx} : {task_detail}')
+        else:
+            print("🚫 No tasks yet in this section.")
 
 
 def main():
     LoadTask()
+
     while True:
         print("what do you want to do :\n"  
         "add\n"
@@ -94,7 +97,7 @@ def main():
                 print("section not found")
                 continue
 
-            ViewTask()
+            ViewTasks()
             try:
                 deleted_task_index = int(input("which task(index) do you want to delete -> "))
                 DeleteTask(deleting_section,deleted_task_index)
@@ -103,7 +106,7 @@ def main():
             
 
         elif inp == "view":
-            ViewTask()
+            ViewTasks()
   
 
         elif inp == "exit":
