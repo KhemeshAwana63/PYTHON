@@ -1,21 +1,53 @@
 import string
-lowercase_letter = list(string.ascii_lowercase)
-uppercase_letter = list(string.ascii_uppercase)
-sum = 0
-user_password = input("put in your password -> ")
+
+PasswordCriteria = {"Uppercase letter":list(string.ascii_uppercase), 
+                    "Lowercase letter": list(string.ascii_lowercase), 
+                    "Number": list(string.digits), 
+                    "Special character": list(string.punctuation),}
+
+PasswordType = {5: "Weak password",
+                10: "Medium password",
+                15: "Strong password"}
+points = 0
+
+def TotalPoint(InputPassword):
+    global points
+    length_of_password = len(InputPassword)
+    for char in InputPassword:
+        if char in PasswordCriteria["Uppercase letter"] or char in PasswordCriteria["Lowercase letter"]:
+            points += 1
+        elif char in PasswordCriteria["Number"]:
+            points += 3
+        elif char in PasswordCriteria["Special character"]:
+            points += 5
+        else:
+            points += 1
+    if length_of_password <= 5:
+        points += 1
+    elif length_of_password > 5 and length_of_password <= 10:
+        points += 3
+    elif length_of_password > 10:
+        points += 5
 
 
-lowercase_checking = False
-uppercase_checking = False
-def CaseChecker():
-    global sum
-    global lowercase_checking
-    for val in lowercase_letter:
-        if val in user_password:
-            sum += 2
-            lowercase_checking = True
+def password_strenth(points):
+    if points <= 5:
+        print(PasswordType[5])
+    elif points <= 10 and points > 5:
+        print(PasswordType[10])
+    elif points > 10:
+        print(PasswordType[15])
+
+def main():
+    while True:
+        InputPassword = input("Enter your password: ").strip()
+        if InputPassword == "":
+            print("Please give some input to evaluate")
+            continue
+        else:
             break
-    
-    for val in uppercase_letter:
-CaseChecker()
-print(sum)
+
+    TotalPoint(InputPassword)
+    password_strenth(points)
+
+main()
